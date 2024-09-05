@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    float A, B, C;
+
+    // Leitura dos valores
+    printf("Digite o valor de A: ");
+    scanf("%f", &A);
+    
+    printf("Digite o valor de B: ");
+    scanf("%f", &B);
+    
+    printf("Digite o valor de C: ");
+    scanf("%f", &C);
+
+    // Verificação se a soma de A + B é menor que A + C
+    if ((A + B) < (A + C)) {
+        printf("A soma de A + B é menor que a soma de A + C.\n");
+    } else {
+        printf("A soma de A + B não é menor que a soma de A + C.\n");
+    }
+
+    return 0;
+}
