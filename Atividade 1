@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração das variáveis
+    float numerador, divisor, resultado;
+
+    // Leitura do numerador
+    printf("Digite o numerador: ");
+    scanf("%f", &numerador);
+
+    // Leitura do divisor
+    printf("Digite o divisor: ");
+    scanf("%f", &divisor);
+
+    // Verificação se o divisor é diferente de zero
+    if (divisor != 0) {
+        // Realiza a divisão e exibe o resultado
+        resultado = numerador / divisor;
+        printf("Resultado da
