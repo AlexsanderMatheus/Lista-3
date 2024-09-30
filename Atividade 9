@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main() {
+    float cotacao_dolar, cotacao_euro;
+    float valor, resultado;
+    int opcao;
+
+    // Lê as cotações das moedas
+    printf("Digite a cotação do Dólar em relação ao Real: R$ ");
+    scanf("%f", &cotacao_dolar);
+    printf("Digite a cotação do Euro em relação ao Real: R$ ");
+    scanf("%f", &cotacao_euro);
+
+    // Menu de conversão
+    do {
+        printf("\nSelecione uma opção de conversão:\n");
+        printf("1) Converter de Real para Euro\n");
+        printf("2) Converter de Real para Dólar\n");
+        printf("3) Converter de Euro para Dólar\n");
+        printf("4) Converter de Euro para Real\n");
+        printf("5) Converter de Dólar para Euro\n");
+        printf("6) Converter de Dólar para Real\n");
+        printf("0) Sair\n");
+        printf("Opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Digite o valor em Reais: R$ ");
+                scanf("%f", &valor);
+                resultado = valor / cotacao_euro;
+                printf("R$ %.2f = € %.2f\n", valor, resultado);
+                break;
+            case 2:
+                printf("Digite o valor em Reais: R$ ");
+                scanf("%f", &valor);
+                resultado = valor / cotacao_dolar;
+                printf("R$ %.2f = $ %.2f\n", valor, resultado);
+                break;
+            case 3:
+                printf("Digite o valor em Euros: € ");
+                scanf("%f", &valor);
+                resultado = valor * (cotacao_dolar / cotacao_euro);
+                printf("€ %.2f = $ %.2f\n", valor, resultado);
+                break;
+            case 4:
+                printf("Digite o valor em Euros: € ");
+                scanf("%f", &valor);
+                resultado = valor * cotacao_euro;
+                printf("€ %.2f = R$ %.2f\n", valor, resultado);
+                break;
+            case 5:
+                printf("Digite o valor em Dólares: $ ");
+                scanf("%f", &valor);
+                resultado = valor * (cotacao_euro / cotacao_dolar);
+                printf("$ %.2f = € %.2f\n", valor, resultado);
+                break;
+            case 6:
+                printf("Digite o valor em Dólares: $ ");
