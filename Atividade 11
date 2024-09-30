@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int valor, nota, quantidade;
+
+    // Lê o valor a ser trocado
+    printf("Digite o valor em reais: R$ ");
+    scanf("%d", &valor);
+
+    // Define as notas disponíveis
+    int notas[] = {100, 50, 20, 10, 5, 1};
+    int num_notas = sizeof(notas) / sizeof(notas[0]);
+
+    // Verifica cada nota e calcula a quantidade necessária
+    for (int i = 0; i < num_notas; i++) {
+        nota = notas[i];
+        if (valor >= nota) {
+            quantidade = valor / nota; // Calcula quantas notas daquela denominação
+            valor = valor % nota; // Atualiza o valor restante
+            printf("%d nota(s) de R$ %d.\n", quantidade, nota);
+        }
+    }
+
+    return 0;
+}
