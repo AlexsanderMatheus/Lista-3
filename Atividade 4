@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    // Lê o número do usuário
+    printf("Digite um número inteiro: ");
+    scanf("%d", &numero);
+
+    // Verifica se o número é divisível por 3
+    if (numero % 3 == 0) {
+        printf("O número %d é divisível por 3.\n", numero);
+    } else {
+        printf("O número %d não é divisível por 3.\n", numero);
+    }
+
+    return 0;
+}
