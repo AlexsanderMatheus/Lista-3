@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int usuario_numero, sorteio_numero, soma;
+    char escolha;
+
+    // Semente para gerar números aleatórios
+    srand(time(0));
+
+    // Pergunta ao usuário se ele aposta em PAR ou ÍMPAR
+    printf("Escolha PAR (P) ou ÍMPAR (I): ");
+    scanf(" %c", &escolha);
+
+    // Pede para o usuário digitar um número de 0 a 5
+    printf("Digite um número de 0 a 5: ");
+    scanf("%d", &usuario_numero);
+
+    // Valida se o número está dentro do intervalo
+    if (usuario_numero < 0 || usuario_numero > 5) {
+        printf("Número inválido! Deve ser de 0 a 5.\n");
+        return 1; // Finaliza o programa com erro
+    }
+
+    // Sorteia um número de 0 a 5
+    sorteio_numero = rand() % 6;
+    printf("O número sorteado foi: %d\n", sorteio_numero);
+
+    // Soma os números
+    soma = usuario_numero + sorteio_numero;
+    printf("A soma é: %d\n", soma);
+
+    // Verifica se o resultado é par ou ímpar
+    if ((soma % 2 == 0 && (escolha == 'P' || escolha == 'p')) ||
+        (soma % 2 != 0 && (escolha == 'I' || escolha == 'i'))) {
+        printf("Você venceu!\n");
+    } else {
+        printf("O programa venceu!\n");
+    }
+
+    return 0;
+}
