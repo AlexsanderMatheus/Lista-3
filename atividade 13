@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    float grauA, grauB, grauC, mediaFinal;
+    char substituicao;
+
+    // Lê as notas do Grau A e Grau B
+    printf("Digite a nota do Grau A: ");
+    scanf("%f", &grauA);
+    printf("Digite a nota do Grau B: ");
+    scanf("%f", &grauB);
+
+    // Calcula a média final
+    mediaFinal = (grauA + grauB) / 2.0;
+    printf("Média Final: %.2f\n", mediaFinal);
+
+    // Verifica se o aluno passou ou ficou em recuperação
+    if (mediaFinal >= 7.0) {
+        printf("Aluno aprovado por média.\n");
+    } else {
+        printf("Aluno em recuperação.\n");
+        printf("Você quer substituir o Grau A ou o Grau B? (a/b): ");
+        scanf(" %c", &substituicao);  // O espaço antes de %c ignora qualquer espaço em branco
+
+        // Lê a nova nota e recalcula a média
+        if (substituicao == 'a' || substituicao == 'A') {
+            printf("Digite a nova nota do Grau A: ");
+            scanf("%f", &grauC);
+            mediaFinal = (grauC + grauB) / 2.0;
+        } else if (substituicao == 'b' || substituicao == 'B') {
+            printf("Digite a nova nota do Grau B: ");
+            scanf("%f", &
