@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int faces, resultado;
+
+    // Semente para geração de números aleatórios
+    srand(time(0));
+
+    // Solicita ao usuário o número de faces do dado
+    printf("Digite o número de faces do dado (4, 6, 8, 10, 12, 16): ");
+    scanf("%d", &faces);
+
+    // Verifica se a quantidade de faces é válida
+    if (faces != 4 && faces != 6 && faces != 8 && faces != 10 && faces != 12 && faces != 16) {
+        printf("Número de faces inválido! O programa aceita apenas 4, 6, 8, 10, 12 ou 16.\n");
+        return 1; // Finaliza o programa com erro
+    }
+
+    // Realiza o sorteio
+    resultado = (rand() % faces) + 1; // Gera um número entre 1 e 'faces'
+
+    // Exibe o resultado do sorteio
+    printf("Você rolou um dado de %d faces e o resultado é: %d\n", faces, resultado);
+
+    return 0;
+}
