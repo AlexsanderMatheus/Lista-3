@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int idadeConveniado, idadeDependente, numeroDependentes;
+    float valorTotal;
+
+    // Valor base do plano de saúde
+    float valorBase = 300.0;
+    valorTotal = valorBase;
+
+    // Lê a idade do conveniado
+    printf("Digite a idade do conveniado: ");
+    scanf("%d", &idadeConveniado);
+
+    // Lê o número de dependentes
+    printf("Digite o número de dependentes: ");
+    scanf("%d", &numeroDependentes);
+
+    // Lê as idades dos dependentes e calcula o valor adicional
+    for (int i = 1; i <= numeroDependentes; i++) {
+        printf("Digite a idade do dependente %d: ", i);
+        scanf("%d", &idadeDependente);
+
+        if (idadeDependente < 10) {
+            valorTotal += 100.0; // Crianças com menos de 10 anos
+        } else if (idadeDependente >= 10 && idadeDependente <= 30) {
+            valorTotal += 220.0; // Dependentes entre 10 e 30 anos
+        } else if (idadeDependente >= 31 && idadeDependente <= 60) {
+            valorTotal += 395.0; // Dependentes entre 31 e 60 anos
+        } else {
+            valorTotal += 480.0; // Dependentes com mais de 60 anos
+        }
+    }
+
+    // Exibe o valor total a ser pago
+    printf("Valor total a ser pago pelo plano de saúde: R$ %.2f\n", valorTotal);
+
+    return 0;
+}
