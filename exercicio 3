@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    // Lê o número do usuário
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+    // Verifica se o número é positivo ou negativo
+    if (numero > 0) {
+        // Número é positivo, calcula o dobro
+        printf("O dobro de %d é %d.\n", numero, 2 * numero);
+    } else if (numero < 0) {
+        // Número é negativo, calcula o triplo
+        printf("O triplo de %d é %d.\n", numero, 3 * numero);
+    } else {
+        // Número é zero
+        printf("O número é zero.\n");
+    }
+
+    return 0;
+}
